@@ -51,7 +51,7 @@ class HomeController extends Controller
                     'Authorization' => 'Bearer '.$token
                 ])->get($apiUrl);
                 $posts = json_decode($data->getBody()->getContents());
-                dd($posts);
+                return $posts;
               break;
             case "POST":
                 $data = Http::withHeaders([
@@ -59,7 +59,7 @@ class HomeController extends Controller
                     'Authorization' => 'Bearer '.$token
                 ])->post($apiUrl);
                 $posts = json_decode($data->getBody()->getContents());
-                dd($posts);
+                return $posts;
               break;
             case "DEL":
               echo "Your favorite color is green!";
